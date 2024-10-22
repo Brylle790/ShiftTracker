@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 3000;
 
 // Use middleware to enable CORS
 app.use(cors());
@@ -14,7 +13,7 @@ async function fetchUserAvatar(userId) {
     try {
         const response = await fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=420x420&format=Png&isCircular=true`);
         const data = await response.json();
-        return data.data[0].imageUrl; // Assuming this returns the correct avatar URL
+        return data.data[0].imageUrl; 
     } catch (error) {
         console.error('Error fetching avatar:', error);
         return 'https://www.roblox.com/asset/?id=0'; // Fallback placeholder
@@ -36,7 +35,7 @@ app.post('/shiftData', async (req, res) => {
         username: data.username,
         totalTime: data.totalTime,
         userId: data.userId,
-        avatarUrl: avatarUrl, // Store fetched avatar URL
+        avatarUrl: avatarUrl, 
         date: data.date
     };
 
@@ -50,7 +49,5 @@ app.get('/shiftData', (req, res) => {
     res.status(200).json(Object.values(shiftData));
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+// Remove the specific port number
+module.exports = app;
