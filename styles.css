@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set body height to 100% of viewport height */
+}
+
+.container {
+    display: flex;
+    height: 100%; /* Ensure the container takes full height */
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    height: 100vh; /* Set sidebar height to full viewport height */
+    position: fixed; /* Fix the sidebar in place */
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    flex-grow: 1;
+    margin-left: 220px; /* Add margin to accommodate fixed sidebar */
+    padding: 20px;
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds the height */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#weekTables {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none; /* Hide elements with this class */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+    }
+}
