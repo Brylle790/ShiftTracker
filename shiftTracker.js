@@ -4,7 +4,7 @@ function getRobloxAvatarUrl(userId) {
 
 async function fetchShiftData() {
     try {
-        const response = await fetch('https://shift-tracker-gamma.vercel.app/shiftData'); // Replace with new URL
+        const response = await fetch('https://shift-tracker-gamma.vercel.app/api/shiftData'); // Replace with new URL
         const players = await response.json();
         updateDisplay(players);
     } catch (error) {
